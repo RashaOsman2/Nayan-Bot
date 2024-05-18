@@ -13,7 +13,12 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event }) {
     var { threadID, messageID } = event;
-    if (event.body.toLowerCase().indexOf("women") === 0 || event.body.indexOf("☕") === 0 || event.body.indexOf("Bedi") === 0) {
+    const triggers = ["women", "☕", "bedi", "Bedi", "Bedi Manus", "Women", "Mohila", "mohila"]; // Add more triggers here
+    const messageLowerCase = event.body.toLowerCase();
+
+    const isTriggered = triggers.some(trigger => messageLowerCase.startsWith(trigger.toLowerCase()));
+
+    if (isTriggered) {
         var msg = {
             body: "English: Women ☕ Filipino: Babae ☕ Bangla: মহিলা ☕ Hindi: महिला ☕ Urdu: خاتون ☕ Arabic: نساء ☕ Chinese: 女性 ☕ Croatian: žena ☕ Japanese: 女性 ☕ Spanish: Mujer ☕ Danish: Kvinde ☕ Italian: Donna ☕ German: Frau ☕ Dutch: Vrouw ☕ Finnish: Nainen ☕ French: Femme ☕ Greek: γυναίκα ☕ Portuguese: Mulher ☕ Belarusian: жанчыны ☕ Korean: 여성 ☕"
         };
