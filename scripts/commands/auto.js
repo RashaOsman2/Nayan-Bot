@@ -11,24 +11,28 @@ module.exports = {
     cooldowns: 5,
   },
   start: async function({ nayan, events, args }) {},
-  handleEvent: async function ({ api, event, args }) {
+  handleEvent: async function({ api, event, args }) {
     const axios = require("axios");
-    const request = require("request");
     const fs = require("fs-extra");
     const { alldown } = require("nayan-media-downloader");
 
     const content = event.body ? event.body : '';
     const body = content.toLowerCase();
 
-    if (body.startsWith("https://")) {
-      try {
-        console.log("Processing URL:", content);
+    // Regex to detect URLs
+    const urlRegex = /https?:\/\/[^\s]+/g;
+    const urlMatches = content.match(urlRegex);
 
+    if (urlMatches) {
+      const url = urlMatches[0]; // Use the first matched URL
+      console.log("Detected URL:", url);
+
+      try {
         api.setMessageReaction("🔍", event.messageID, (err) => {
           if (err) console.error("Error setting search reaction:", err);
         }, true);
 
-        const data = await alldown(content);
+        const data = await alldown(url);
         console.log("Downloader data:", data);
 
         if (!data || !data.data) {
