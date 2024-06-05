@@ -5,7 +5,7 @@
   "developermode": false,
   "language": "en",
   "notification": true,
-  "approval": false,
+  "approval": true,
   "BOTNAME": "YOR-RASHA",
   "PREFIX": "/",
   "OPERATOR": [
