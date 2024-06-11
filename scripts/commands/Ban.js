@@ -1,12 +1,20 @@
 module.exports.config = {
-    name: "ban",
-    version: "1.0.0",
-    hasPermssion: 2,
-    credits: "ZiaRein",
-    description: "restriction",
-    commandCategory: "group",
-    usages: `ban user\n\nHow to use?\n${global.config.PREFIX}ban <UID @tag>\n\nExample:\n${global.config.PREFIX}ban (uid)\n${global.config.PREFIX}ban @name\n`,
-    cooldowns: 5
+	name: "batmanslap",
+  version: "1.0.0",
+  permission: 2,
+  credits: "Rasha",
+  description: " ",
+  prefix: true, 
+  category: "user", 
+  usages: "`ban user\n\nHow to use?\n$ {global.config.PREFIX)ban <UID @tag>\n\nExample:\n${global .config.PREFIX}ban (uid)\n$ {global.config.PREFIX}ban @name\n,",
+  cooldowns: 5,
+  dependencies: {
+	  "fs-extra": "",
+	  "axios": "",
+	  "canvas" :"",
+	  "jimp": "",
+	  "node-superfetch": ""
+  }
 };
 
 module.exports.languages = {
