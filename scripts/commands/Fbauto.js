@@ -1,6 +1,6 @@
 module.exports = {
   config: {
-    name: "fbvideo",
+    name: "fbauto",
     version: "0.0.2",
     permission: 0,
     prefix: false,  // Set to false since we don't want to use a prefix command
