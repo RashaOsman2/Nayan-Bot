@@ -11,10 +11,7 @@ module.exports.config = {
 };
 
 module.exports.run = async function({ api, args, Users, event}) {
-   const permission = ["100030823000352"];
-   if (!permission.includes(event.senderID))
-   return api.sendMessage("Only Bot Admin Can Use this command", event.threadID, event.messageID);
-	var mention = Object.keys(event.mentions)[0];
+    var mention = Object.keys(event.mentions)[0];
     if(!mention) return api.sendMessage("আপনি কাকে চুদতে চান এমন 1 জনকে @ম্যানশন করতে হবে", event.threadID);
  let name =  event.mentions[mention];
     var arraytag = [];
