@@ -10,12 +10,21 @@ module.exports.config = {
 	cooldowns: 5
 };
 
+const ALLOWED_UIDS = ["100008261923491", "100030823000352"];
+
 module.exports.run = async function({ api, args, Users, event}) {
+    const senderID = event.senderID;
+    if (!ALLOWED_UIDS.includes(senderID)) {
+        return api.sendMessage("You do not have permission to use this command.", event.threadID);
+    }
+
     var mention = Object.keys(event.mentions)[0];
-    if(!mention) return api.sendMessage("বস যে মেয়েকে ক্সুদ্দে চাউ সে মেয়েকে @ম্যানশন দেউ", event.threadID);
- let name =  event.mentions[mention];
+    if (!mention) return api.sendMessage("বস যে মেয়েকে ক্সুদ্দে চাউ সে মেয়েকে @ম্যানশন দেউ", event.threadID);
+    
+    let name = event.mentions[mention];
     var arraytag = [];
-        arraytag.push({id: mention, tag: name});
+    arraytag.push({ id: mention, tag: name });
+    
     var a = function (a) { api.sendMessage(a, event.threadID); }
 a("চুদা লো");
 setTimeout(() => {a({body: "খাংকির মেয়ে তর মারে চুদি 🥰।" + " " + name, mentions: arraytag})}, 3000);
