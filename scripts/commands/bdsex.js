@@ -1,4 +1,4 @@
-module.exports.config = {
+/*module.exports.config = {
   name: "sex",
   version: "1.0.0",
   permission: 2,
