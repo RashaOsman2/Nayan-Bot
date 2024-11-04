@@ -9,15 +9,15 @@
   "saveState": true,
   "banMsg": false,
   "adminOnlyMsg": false,
-  "BOTNAME": "nayan-bot",
+  "BOTNAME": "YOR-OSMAN",
   "PREFIX": "/",
   "OPERATOR": [
-    "100014896964436",
-    "100000959749712"
+    "100008261923491",
+    "61568069791610"
   ],
   "ADMINBOT": [
-    "100000959749712",
-    ""
+    "100008261923491",
+    "61568069791610"
   ],
   "OWNER": ["100000959749712"], 
   "APPROVED": [],
