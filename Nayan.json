@@ -6,7 +6,7 @@
   "language": "en",
   "notification": false,
   "approval": false,
-  "saveState": true,
+  "saveState": false,
   "banMsg": false,
   "adminOnlyMsg": false,
   "BOTNAME": "YOR-OSMAN",
